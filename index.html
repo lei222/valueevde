@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>value</title>
+    <style>
+        html,body{
+            padding: 0;
+            margin: 0;
+        }
+        .basliq{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            line-height: 150px;
+            font-size: 20px;
+            width: 100%;
+            background-color: rgb(20, 71, 146);
+            color: black;
+        }
+        .sonluq{
+            text-align: center;
+            line-height: 120px;
+           
+            width: 100%;
+            background-color: rgb(20, 71, 146);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="basliq">Suretin tapilmasi</div><br><br>
+    Sizi qarsilayacagimiz mekan <input type="text" id="mekan1" placeholder="Mekani qeyd edin"><br><br>
+    Gedeceyiniz yer <input type="text" id="mekan2" placeholder="Gedeceyiniz yeri qeyd edin"><br><br>
+    Mesafe <input type="text" id="mesafe" placeholder="Mesafeni qeyd edin"> <br><br>
+    Suret <input type="text" id="suret" placeholder="Sureti qeyd edin"><br><br>
+    <button class="hesabla">Hesabla</button>
+    <h2 id="result">Netice</h2>
+    <script>
+        const hesabla = document.querySelector('.hesabla');
+        hesabla.onclick = function() {
+            let netice = mesafe.value / suret.value;
+            document.getElementById('result').innerHTML = `Avtomobil ${mesafe.value} km mesafeni ${suret.value} km/saat suret ile gederse ${netice} saata gedeceyiniz yere catacaqsiniz. `;
+        }
+    </script>
+    <div class="sonluq">Design by Lei &copy;2024</div>
+
+    
+    
+</body>
+</html>
