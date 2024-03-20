@@ -41,7 +41,7 @@
         const hesabla = document.querySelector('.hesabla');
         hesabla.onclick = function() {
             let netice = mesafe.value / suret.value;
-            document.getElementById('result').innerHTML = `Avtomobil ${mesafe.value} km mesafeni ${suret.value} km/saat suret ile gederse ${netice} saata gedeceyiniz yere catacaqsiniz. `;
+            document.getElementById('result').innerHTML = `Avtomobil ${mesafe.value} km mesafeni ${suret.value} km/saat suret ile gederse ${netice.toFixed} saata gedeceyiniz yere catacaqsiniz. `;
         }
     </script>
     
