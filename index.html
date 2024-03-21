@@ -129,26 +129,26 @@
 
             const usd = document.querySelector('.usd')
             usd.onclick = function () {
-                let netice = manat.value * Usd;
+                let netice = manat.value / Usd;
                 document.getElementById('result2').innerHTML = `${manat.value} Azn = ${netice} $`;
 
             }
 
             const tl = document.querySelector('.tl')
             tl.onclick = function () {
-                let netice2 = manat.value * Tl;
+                let netice2 = manat.value /  Tl;
                 document.getElementById('result2').innerHTML = `${manat.value} Azn = ${netice2} Tl`
             }
 
             const rubl = document.querySelector('.rubl')
             rubl.onclick = function () {
-                let netice3 = manat.value * Rubl;
+                let netice3 = manat.value / Rubl;
                 document.getElementById('result2').innerHTML = `${manat.value} Azn = ${netice3} Rubl`
             }
 
             const euro = document.querySelector('.euro')
             euro.onclick = function () {
-                let netice4 = manat.value * Euro;
+                let netice4 = manat.value / Euro;
                 document.getElementById('result2').innerHTML = ` ${manat.value} Azn = ${netice4} Euro`;
             }
 
