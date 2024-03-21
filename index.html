@@ -1,50 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>value</title>
     <style>
-        html,body{
+        html,body {
             padding: 0;
             margin: 0;
+            scroll-behavior: smooth;
         }
-        .basliq{
+
+        nav {
             display: flex;
             justify-content: center;
             text-align: center;
             line-height: 100px;
-            font-size: 20px;
             width: 100%;
-            font-family: 'Courier New', Courier, monospace;
             background-color: rgb(20, 71, 146);
-            color: black;
         }
-        #result{
+
+        nav a {
+            color: white;
+            margin-right: 20px;
+        }
+
+        .basliq {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px;
+            font-size: larger;
+        }
+
+        .basliq2 {
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px;
+            font-size: larger;
+        }
+
+        #result {
             text-align: center;
             font-size: 15px;
             font-family: 'Courier New', Courier, monospace;
 
         }
 
+        .border {
+            margin: auto;
+            text-align: center;
+            width: 250px;
+            height: 280px;
+            border-style: solid;
+            border-color: rgb(163, 157, 157);
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px;
+
+        }
+
+        .border2 {
+            margin: auto;
+            text-align: center;
+            width: 250px;
+            height: 280px;
+            border-style: solid;
+            border-color: rgb(163, 157, 157);
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px;
+
+        }
+
+        #result {
+            margin: auto;
+            text-align: center;
+            width: 300px;
+            height: 70px;
+            border-color: rgb(163, 157, 157);
+            border-style: solid;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px;
+        }
     </style>
 </head>
+
 <body>
-    <div class="basliq">Suretin tapilmasi</div><br><br>
-    Sizi qarsilayacagimiz mekan ; <input type="text" id="mekan1" placeholder="Mekani qeyd edin"><br><br>
-    Gedeceyiniz yer; <input type="text" id="mekan2" placeholder="Yeri qeyd edin"><br><br>
-    Mesafe; <input type="text" id="mesafe" placeholder="Mesafeni qeyd edin"> <br><br>
-    Suret; <input type="text" id="suret" placeholder="Sureti qeyd edin"><br><br>
-    <button class="hesabla">Hesabla</button>
-    <h2 id="result">Netice</h2>
+    <nav>
+        <a href="#home">Suret</a>
+        <a href="#about">Cevirme</a>
+    </nav>
+
+    <section id="home">
+        <div class="basliq">SURETIN TAPILMASI</div><br><br>
+        <div class="border"><br>
+            Sizi qarsilayacagimiz mekan ; <br> <input type="text" id="mekan1" placeholder="Mekani qeyd edin"><br><br>
+            Gedeceyiniz yer; <br> <input type="text" id="mekan2" placeholder="Yeri qeyd edin"><br><br>
+            Mesafe; <br> <input type="text" id="mesafe" placeholder="Mesafeni qeyd edin"> <br><br>
+            Suret; <br> <input type="text" id="suret" placeholder="Sureti qeyd edin"><br><br>
+            <button class="hesabla">Hesabla</button>
+        </div><br><br>
+
+    </section>
+    <h2 id="result"></h2>
     <script>
         const hesabla = document.querySelector('.hesabla');
-        hesabla.onclick = function() {
+        hesabla.onclick = function () {
             let netice = mesafe.value / suret.value;
-            document.getElementById('result').innerHTML = `Avtomobil ${mesafe.value} km mesafeni ${suret.value} km/saat suret ile gederse ${netice.toFixed} saata gedeceyiniz yere catacaqsiniz. `;
+            document.getElementById('result').innerHTML = `Avtomobil ${mesafe.value} km mesafeni ${suret.value} km/saat suret ile gederse ${netice} saata gedeceyiniz yere catacaqsiniz. `;
         }
-    </script>
-    
-    
+    </script><br>
+    <hr>
+    <section id="about">
+        <div class="basliq2">VESAITIN CEVRILMESI</div><br><br>
+        <div class="border2">
+            <br> Meblegi daxil edin; <br><br> <input type="text" placeholder="Meblegi daxil edin" id="manat"><br><br>
+            <br><button class="usd">USD</button>
+            <button class="tl">TL</button>
+            <button class="rubl">RUBL</button>
+            <button class="euro">EURO</button><br><br>
+            <h3 id="result2"></h3>
+        </div>
+        <script>
+            let Usd = 1.7;
+            let Tl = 0.053;
+            let Rubl = 0.019;
+            let Euro = 1.85;
+
+            const usd = document.querySelector('.usd')
+            usd.onclick = function () {
+                let netice = manat.value * Usd;
+                document.getElementById('result2').innerHTML = `${manat.value} Azn = ${netice} $`;
+
+            }
+
+            const tl = document.querySelector('.tl')
+            tl.onclick = function () {
+                let netice2 = manat.value * Tl;
+                document.getElementById('result2').innerHTML = `${manat.value} Azn = ${netice2} Tl`
+            }
+
+            const rubl = document.querySelector('.rubl')
+            rubl.onclick = function () {
+                let netice3 = manat.value * Rubl;
+                document.getElementById('result2').innerHTML = `${manat.value} Azn = ${netice3} Rubl`
+            }
+
+            const euro = document.querySelector('.euro')
+            euro.onclick = function () {
+                let netice4 = manat.value * Euro;
+                document.getElementById('result2').innerHTML = ` ${manat.value} Azn = ${netice4} Euro`;
+            }
+
+
+
+        </script>
+    </section> <br><br>
+    <hr>
+
+
+
+
 </body>
+
 </html>
